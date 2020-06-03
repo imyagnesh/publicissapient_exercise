@@ -41,10 +41,13 @@ const HomePage = ({
   match: {
     params: { page },
   },
+  history: { push },
 }) => {
+  console.log('news', news);
   const [newsList, setNewsList] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     loadNews(page || 1);
   }, [loadNews, page]);
 
@@ -58,6 +61,16 @@ const HomePage = ({
       })) || [];
     setNewsList(data);
   }, [news]);
+
+  const previous = () => {
+    if (page && page !== 1) {
+      push(`/${Number(page) - 1}`);
+    }
+  };
+
+  const next = () => {
+    push(`/${Number(page || 1) + 1}`);
+  };
 
   const head = () => {
     return (
@@ -102,9 +115,25 @@ const HomePage = ({
                 padding: 10,
               }}
             >
-              <span className="btn">Previous</span>
-              <span style={{ margin: '0 5px' }}>|</span>
-              <span className="btn">Next</span>
+              <If condition={page && page !== 1}>
+                <span
+                  className="btn"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={previous}
+                  onClick={previous}
+                >
+                  Previous
+                </span>
+              </If>
+              <If condition={page && page > 1 && page < news.nbPages - 1}>
+                <span style={{ margin: '0 5px' }}>|</span>
+              </If>
+              <If condition={!page || page < news.nbPages - 1}>
+                <span className="btn" role="button" tabIndex={0} onKeyDown={next} onClick={next}>
+                  Next
+                </span>
+              </If>
             </div>
             <Divider />
             <If condition={news.hits}>
@@ -142,12 +171,16 @@ HomePage.propTypes = {
   news: PropTypes.shape({
     hits: PropTypes.array,
     page: PropTypes.number,
+    nbPages: PropTypes.number,
   }).isRequired,
   loadNews: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
   match: PropTypes.shape({
     params: PropTypes.object,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
