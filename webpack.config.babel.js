@@ -33,6 +33,23 @@ const getConfig = (target) => ({
           'css-loader',
         ],
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              caller: { target },
+            },
+          },
+          {
+            loader: 'react-svg-loader',
+            options: {
+              jsx: true, // true outputs JSX tags
+            },
+          },
+        ],
+      },
     ],
   },
   externals: target === 'node' ? ['@loadable/component', nodeExternals()] : undefined,

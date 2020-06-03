@@ -14,8 +14,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/:page" exact component={HomePage} />
+        <Route path="/:page?" exact component={HomePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </ErrorBoundary>

@@ -5,7 +5,10 @@ import { FETCH_NEWS, SUCCESS, FAIL, REQUEST } from '../constants/actionTypes';
 
 function* fetchNews({ payload: page }) {
   try {
-    const gstRes = yield call(axios.get, `https://hn.algolia.com/api/v1/search?page=${page}`);
+    const gstRes = yield call(
+      axios.get,
+      `https://hn.algolia.com/api/v1/search?query=""&hitsPerPage=30&page=${page}`,
+    );
     yield put(action(`${FETCH_NEWS}_${SUCCESS}`, gstRes.data));
   } catch (error) {
     yield put(action(`${FETCH_NEWS}_${FAIL}`, error));
