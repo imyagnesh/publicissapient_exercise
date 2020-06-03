@@ -43,7 +43,6 @@ const HomePage = ({
   },
   history: { push },
 }) => {
-  console.log('news', news);
   const [newsList, setNewsList] = useState([]);
 
   useEffect(() => {
@@ -96,6 +95,9 @@ const HomePage = ({
         </When>
         <When condition={error}>
           <h2>{error}</h2>
+        </When>
+        <When condition={news.hits && news.hits.length <= 0}>
+          <h2>No Records Available</h2>
         </When>
         <Otherwise>
           <div
