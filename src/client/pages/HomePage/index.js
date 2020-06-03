@@ -14,7 +14,7 @@ import {
   Label,
   ResponsiveContainer,
 } from 'recharts';
-import { FETCH_NEWS, REQUEST } from '../../../Shared/constants/actionTypes';
+import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../Shared/constants/actionTypes';
 import { action } from '../../../Shared/utils';
 import ResponsiveTable from '../../components/ResponsiveTable';
 import NewsDetails from '../../components/NewsDetails';
@@ -38,6 +38,8 @@ const HomePage = ({
   loading,
   loadNews,
   error,
+  upVote,
+  hideHit,
   match: {
     params: { page },
   },
@@ -52,14 +54,33 @@ const HomePage = ({
 
   useEffect(() => {
     const data =
-      news?.hits?.map((x) => ({
-        comments: x.num_comments || 0,
-        voteCount: x.points || 0,
-        upVote: <UpIcon width={32} height={32} fill="#979797" />,
-        newsDetails: <NewsDetails hit={x} />,
-      })) || [];
+      news?.hits?.reduce((p, c) => {
+        if (!c.hide) {
+          return [
+            ...p,
+            {
+              comments: c.num_comments || 0,
+              voteCount: c.points || 0,
+              upVote: (
+                <div
+                  className="btn"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={() => upVote(c.objectID)}
+                  onClick={() => upVote(c.objectID)}
+                >
+                  <UpIcon width={32} height={32} fill="#979797" />
+                </div>
+              ),
+              newsDetails: <NewsDetails hit={c} onHide={hideHit} />,
+              objectID: c.objectID,
+            },
+          ];
+        }
+        return p;
+      }, []) || [];
     setNewsList(data);
-  }, [news]);
+  }, [news, hideHit, upVote]);
 
   const previous = () => {
     if (page && page !== 1) {
@@ -138,13 +159,10 @@ const HomePage = ({
               </If>
             </div>
             <Divider />
-            <If condition={news.hits}>
+            <If condition={newsList.length > 0}>
               <div style={{ margin: 10 }}>
                 <ResponsiveContainer width="100%" height={300}>
-                  <LineChart
-                    data={news.hits}
-                    margin={{ top: 10, right: 10, left: 20, bottom: 100 }}
-                  >
+                  <LineChart data={newsList} margin={{ top: 10, right: 10, left: 20, bottom: 100 }}>
                     <CartesianGrid vertical={false} />
                     <XAxis dataKey="objectID" angle={-90} textAnchor="end" verticalAnchor="middle">
                       <Label value="ID" position="bottom" offset={50} />
@@ -152,7 +170,7 @@ const HomePage = ({
                     <YAxis label={{ value: 'Votes', angle: -90, position: 'left' }} />
                     <Tooltip />
                     <Line
-                      dataKey="points"
+                      dataKey="voteCount"
                       stroke="#366396"
                       strokeWidth={4}
                       dot={{ strokeWidth: 6, r: 3 }}
@@ -184,6 +202,8 @@ HomePage.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  upVote: PropTypes.func.isRequired,
+  hideHit: PropTypes.func.isRequired,
 };
 
 HomePage.defaultProps = {
@@ -201,6 +221,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     loadNews: (payload) => dispatch(action(`${FETCH_NEWS}_${REQUEST}`, payload)),
+    upVote: (payload) => dispatch(action(`${UP_VOTE}_${REQUEST}`, payload)),
+    hideHit: (payload) => dispatch(action(`${HIDE_HIT}_${REQUEST}`, payload)),
   };
 };
 

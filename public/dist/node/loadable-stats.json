@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "b8d245c6a919d6463e6d",
+  "hash": "f0d1d9b7bda76c28d931",
   "publicPath": "/dist/node/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/node",
   "assetsByChunkName": {
@@ -31,7 +31,7 @@
     },
     {
       "name": "HomePage.js",
-      "size": 26448,
+      "size": 28368,
       "chunks": [
         "HomePage"
       ],
