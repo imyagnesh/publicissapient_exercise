@@ -1,4 +1,4 @@
-import { FETCH_NEWS, SUCCESS, UP_VOTE, HIDE_HIT } from '../constants/actionTypes';
+import { FETCH_NEWS, SUCCESS, UP_VOTE, HIDE_HIT } from '../../constants/actionTypes';
 
 const initialState = {};
 

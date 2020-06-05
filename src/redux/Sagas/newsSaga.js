@@ -1,7 +1,7 @@
 import { call, put, takeLatest, all, fork, select } from 'redux-saga/effects';
 import axios from 'axios';
-import { action, getItem, setItem } from '../utils';
-import { FETCH_NEWS, SUCCESS, FAIL, REQUEST, HIDE_HIT, UP_VOTE } from '../constants/actionTypes';
+import { action, getItem, setItem } from '../../utils';
+import { FETCH_NEWS, SUCCESS, FAIL, REQUEST, HIDE_HIT, UP_VOTE } from '../../constants/actionTypes';
 
 const getNews = (state) => state.news;
 

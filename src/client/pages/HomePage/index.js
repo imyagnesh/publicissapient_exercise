@@ -14,8 +14,8 @@ import {
   Label,
   ResponsiveContainer,
 } from 'recharts';
-import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../redux/constants/actionTypes';
-import { action } from '../../../redux/utils';
+import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../constants/actionTypes';
+import { action } from '../../../utils';
 import ResponsiveTable from '../../components/ResponsiveTable';
 import NewsDetails from '../../components/NewsDetails';
 import Divider from '../../components/Divider';
