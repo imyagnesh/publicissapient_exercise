@@ -2,36 +2,21 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "a26e525fad790dce13cf",
+  "hash": "7584ef3b36a2d005597c",
   "publicPath": "/dist/node/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/node",
   "assetsByChunkName": {
-    "NotFoundPage": "NotFoundPage-bundle-0e5d4423.js",
     "main": [
       "main.css",
-      "main-bundle-5dd14bff.js"
+      "main-bundle-2d271252.js"
     ]
   },
   "assets": [
     {
-      "name": "NotFoundPage-bundle-0e5d4423.js",
-      "size": 569,
+      "name": "main-bundle-2d271252.js",
+      "size": 7675,
       "chunks": [
         0
-      ],
-      "chunkNames": [
-        "NotFoundPage"
-      ],
-      "info": {
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
-      "name": "main-bundle-5dd14bff.js",
-      "size": 8640,
-      "chunks": [
-        1
       ],
       "chunkNames": [
         "main"
@@ -45,7 +30,7 @@
       "name": "main.css",
       "size": 2075,
       "chunks": [
-        1
+        0
       ],
       "chunkNames": [
         "main"
@@ -58,11 +43,11 @@
   "entrypoints": {
     "main": {
       "chunks": [
-        1
+        0
       ],
       "assets": [
         "main.css",
-        "main-bundle-5dd14bff.js"
+        "main-bundle-2d271252.js"
       ],
       "children": {},
       "childAssets": {}
@@ -71,21 +56,11 @@
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        1
-      ],
-      "assets": [
-        "main.css",
-        "main-bundle-5dd14bff.js"
-      ],
-      "children": {},
-      "childAssets": {}
-    },
-    "NotFoundPage": {
-      "chunks": [
         0
       ],
       "assets": [
-        "NotFoundPage-bundle-0e5d4423.js"
+        "main.css",
+        "main-bundle-2d271252.js"
       ],
       "children": {},
       "childAssets": {}
@@ -94,7 +69,7 @@
   "logging": {
     "webpack.buildChunkGraph.visitModules": {
       "entries": [],
-      "filteredEntries": 5,
+      "filteredEntries": 2,
       "debug": false
     }
   },

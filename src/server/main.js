@@ -34,7 +34,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../../public'), { maxAge: '30d' }));
+app.use(express.static(path.join(process.cwd(), 'public'), { maxAge: '30d' }));
 
 if (process.env.NODE_ENV !== 'production') {
   /* eslint-disable global-require, import/no-extraneous-dependencies */
@@ -56,9 +56,9 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
-const nodeStats = path.resolve(__dirname, '../../public/dist/node/loadable-stats.json');
+const nodeStats = path.resolve(process.cwd(), 'public/dist/node/loadable-stats.json');
 
-const webStats = path.resolve(__dirname, '../../public/dist/web/loadable-stats.json');
+const webStats = path.resolve(process.cwd(), 'public/dist/web/loadable-stats.json');
 
 app.get('*', (req, res) => {
   const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats });

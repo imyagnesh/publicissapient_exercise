@@ -2,36 +2,21 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "6ed9523b10611b7592dc",
+  "hash": "eb1549ef3137736172c3",
   "publicPath": "/dist/web/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
   "assetsByChunkName": {
-    "NotFoundPage": "NotFoundPage-bundle-5c23afbf.js",
     "main": [
       "main.css",
-      "main-bundle-6a161131.js"
+      "main-bundle-a26ad7f9.js"
     ]
   },
   "assets": [
     {
-      "name": "NotFoundPage-bundle-5c23afbf.js",
-      "size": 682,
+      "name": "main-bundle-a26ad7f9.js",
+      "size": 767212,
       "chunks": [
         0
-      ],
-      "chunkNames": [
-        "NotFoundPage"
-      ],
-      "info": {
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
-      "name": "main-bundle-6a161131.js",
-      "size": 771557,
-      "chunks": [
-        1
       ],
       "chunkNames": [
         "main"
@@ -45,7 +30,7 @@
       "name": "main.css",
       "size": 2075,
       "chunks": [
-        1
+        0
       ],
       "chunkNames": [
         "main"
@@ -58,11 +43,11 @@
   "entrypoints": {
     "main": {
       "chunks": [
-        1
+        0
       ],
       "assets": [
         "main.css",
-        "main-bundle-6a161131.js"
+        "main-bundle-a26ad7f9.js"
       ],
       "children": {},
       "childAssets": {}
@@ -71,21 +56,11 @@
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        1
-      ],
-      "assets": [
-        "main.css",
-        "main-bundle-6a161131.js"
-      ],
-      "children": {},
-      "childAssets": {}
-    },
-    "NotFoundPage": {
-      "chunks": [
         0
       ],
       "assets": [
-        "NotFoundPage-bundle-5c23afbf.js"
+        "main.css",
+        "main-bundle-a26ad7f9.js"
       ],
       "children": {},
       "childAssets": {}
@@ -94,7 +69,7 @@
   "logging": {
     "webpack.buildChunkGraph.visitModules": {
       "entries": [],
-      "filteredEntries": 5,
+      "filteredEntries": 2,
       "debug": false
     }
   },
