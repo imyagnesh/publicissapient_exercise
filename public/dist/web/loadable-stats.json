@@ -1,0 +1,229 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.43.0",
+  "hash": "6ed9523b10611b7592dc",
+  "publicPath": "/dist/web/",
+  "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
+  "assetsByChunkName": {
+    "NotFoundPage": "NotFoundPage-bundle-5c23afbf.js",
+    "main": [
+      "main.css",
+      "main-bundle-6a161131.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "NotFoundPage-bundle-5c23afbf.js",
+      "size": 682,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "NotFoundPage"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "main-bundle-6a161131.js",
+      "size": 771557,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "main.css",
+      "size": 2075,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "main.css",
+        "main-bundle-6a161131.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "main.css",
+        "main-bundle-6a161131.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "NotFoundPage": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "NotFoundPage-bundle-5c23afbf.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": [
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/dist/web/",
+      "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/components/NewsDetails/NewsDetails.css"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/dist/web/",
+      "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/components/ResponsiveTable/ResponsiveTable.css"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/dist/web/",
+      "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/main.css"
+    }
+  ]
+}
