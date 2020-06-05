@@ -56,9 +56,9 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
-const nodeStats = path.resolve(process.cwd(), 'public/dist/node/loadable-stats.json');
+const nodeStats = path.join(process.cwd(), 'public/dist/node/loadable-stats.json');
 
-const webStats = path.resolve(process.cwd(), 'public/dist/web/loadable-stats.json');
+const webStats = path.join(process.cwd(), 'public/dist/web/loadable-stats.json');
 
 app.get('*', (req, res) => {
   const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats });
