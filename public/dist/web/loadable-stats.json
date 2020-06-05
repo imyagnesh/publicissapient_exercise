@@ -2,50 +2,46 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "6ed9523b10611b7592dc",
+  "hash": "6ae3ff2e09ed38735190",
   "publicPath": "/dist/web/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
   "assetsByChunkName": {
-    "NotFoundPage": "NotFoundPage-bundle-5c23afbf.js",
+    "NotFoundPage": "NotFoundPage.js",
     "main": [
       "main.css",
-      "main-bundle-6a161131.js"
+      "main.js"
     ]
   },
   "assets": [
     {
-      "name": "NotFoundPage-bundle-5c23afbf.js",
-      "size": 682,
+      "name": "NotFoundPage.js",
+      "size": 4096,
       "chunks": [
-        0
+        "NotFoundPage"
       ],
       "chunkNames": [
         "NotFoundPage"
       ],
-      "info": {
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
-      "name": "main-bundle-6a161131.js",
-      "size": 771557,
-      "chunks": [
-        1
-      ],
-      "chunkNames": [
-        "main"
-      ],
-      "info": {
-        "immutable": true
-      },
+      "info": {},
       "emitted": false
     },
     {
       "name": "main.css",
       "size": 2075,
       "chunks": [
-        1
+        "main"
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "main.js",
+      "size": 5514190,
+      "chunks": [
+        "main"
       ],
       "chunkNames": [
         "main"
@@ -58,11 +54,11 @@
   "entrypoints": {
     "main": {
       "chunks": [
-        1
+        "main"
       ],
       "assets": [
         "main.css",
-        "main-bundle-6a161131.js"
+        "main.js"
       ],
       "children": {},
       "childAssets": {}
@@ -71,21 +67,21 @@
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        1
+        "main"
       ],
       "assets": [
         "main.css",
-        "main-bundle-6a161131.js"
+        "main.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "NotFoundPage": {
       "chunks": [
-        0
+        "NotFoundPage"
       ],
       "assets": [
-        "NotFoundPage-bundle-5c23afbf.js"
+        "NotFoundPage.js"
       ],
       "children": {},
       "childAssets": {}
@@ -110,7 +106,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -122,7 +118,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -152,7 +148,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -164,7 +160,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -194,7 +190,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -206,7 +202,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
