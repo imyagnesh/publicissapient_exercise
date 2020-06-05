@@ -2,90 +2,53 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "e6ee11b3c24a098e62d0",
+  "hash": "6f9ee6db69b37350c53f",
   "publicPath": "/dist/web/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
   "assetsByChunkName": {
-    "HomePage": [
-      "HomePage.css",
-      "HomePage.js"
-    ],
-    "NotFoundPage": "NotFoundPage.js",
+    "NotFoundPage": "NotFoundPage-bundle-5c23afbf.js",
     "main": [
       "main.css",
-      "main.js"
-    ],
-    "vendors~HomePage": "vendors~HomePage.js"
+      "main-bundle-a9e97837.js"
+    ]
   },
   "assets": [
     {
-      "name": "HomePage.css",
-      "size": 2051,
+      "name": "NotFoundPage-bundle-5c23afbf.js",
+      "size": 682,
       "chunks": [
-        "HomePage"
-      ],
-      "chunkNames": [
-        "HomePage"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "HomePage.js",
-      "size": 28245,
-      "chunks": [
-        "HomePage"
-      ],
-      "chunkNames": [
-        "HomePage"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "NotFoundPage.js",
-      "size": 4096,
-      "chunks": [
-        "NotFoundPage"
+        0
       ],
       "chunkNames": [
         "NotFoundPage"
       ],
-      "info": {},
+      "info": {
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "main-bundle-a9e97837.js",
+      "size": 771557,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {
+        "immutable": true
+      },
       "emitted": false
     },
     {
       "name": "main.css",
-      "size": 156,
+      "size": 2075,
       "chunks": [
-        "main"
+        1
       ],
       "chunkNames": [
         "main"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "main.js",
-      "size": 2452024,
-      "chunks": [
-        "main"
-      ],
-      "chunkNames": [
-        "main"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "vendors~HomePage.js",
-      "size": 3037608,
-      "chunks": [
-        "vendors~HomePage"
-      ],
-      "chunkNames": [
-        "vendors~HomePage"
       ],
       "info": {},
       "emitted": false
@@ -95,11 +58,11 @@
   "entrypoints": {
     "main": {
       "chunks": [
-        "main"
+        1
       ],
       "assets": [
         "main.css",
-        "main.js"
+        "main-bundle-a9e97837.js"
       ],
       "children": {},
       "childAssets": {}
@@ -108,34 +71,21 @@
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        "main"
+        1
       ],
       "assets": [
         "main.css",
-        "main.js"
-      ],
-      "children": {},
-      "childAssets": {}
-    },
-    "HomePage": {
-      "chunks": [
-        "vendors~HomePage",
-        "HomePage"
-      ],
-      "assets": [
-        "vendors~HomePage.js",
-        "HomePage.css",
-        "HomePage.js"
+        "main-bundle-a9e97837.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "NotFoundPage": {
       "chunks": [
-        "NotFoundPage"
+        0
       ],
       "assets": [
-        "NotFoundPage.js"
+        "NotFoundPage-bundle-5c23afbf.js"
       ],
       "children": {},
       "childAssets": {}
@@ -160,7 +110,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            "mini-css-extract-plugin"
+            0
           ],
           "assets": [
             "*"
@@ -172,7 +122,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            "mini-css-extract-plugin"
+            0
           ],
           "assets": [
             "*"
@@ -189,7 +139,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/client/components/NewsDetails/NewsDetails.css"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/components/NewsDetails/NewsDetails.css"
     },
     {
       "errors": [],
@@ -202,7 +152,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            "mini-css-extract-plugin"
+            0
           ],
           "assets": [
             "*"
@@ -214,7 +164,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            "mini-css-extract-plugin"
+            0
           ],
           "assets": [
             "*"
@@ -231,7 +181,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/client/components/ResponsiveTable/ResponsiveTable.css"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/components/ResponsiveTable/ResponsiveTable.css"
     },
     {
       "errors": [],
@@ -244,7 +194,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            "mini-css-extract-plugin"
+            0
           ],
           "assets": [
             "*"
@@ -256,7 +206,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            "mini-css-extract-plugin"
+            0
           ],
           "assets": [
             "*"
@@ -273,7 +223,7 @@
         }
       },
       "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!src/client/main.css"
+      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/main.css"
     }
   ]
 }

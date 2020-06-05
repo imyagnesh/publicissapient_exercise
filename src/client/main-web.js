@@ -6,8 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { loadableReady } from '@loadable/component';
 import App from './App';
-import configureStore from '../Shared/store/createStore';
-import Sagas from '../Shared/Sagas';
+import configureStore from '../redux/store/createStore';
+import Sagas from '../redux/Sagas';
 
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;

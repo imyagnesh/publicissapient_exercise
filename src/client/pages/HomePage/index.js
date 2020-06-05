@@ -14,8 +14,8 @@ import {
   Label,
   ResponsiveContainer,
 } from 'recharts';
-import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../Shared/constants/actionTypes';
-import { action } from '../../../Shared/utils';
+import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../redux/constants/actionTypes';
+import { action } from '../../../redux/utils';
 import ResponsiveTable from '../../components/ResponsiveTable';
 import NewsDetails from '../../components/NewsDetails';
 import Divider from '../../components/Divider';
@@ -64,6 +64,7 @@ const HomePage = ({
               upVote: (
                 <div
                   className="btn"
+                  aria-label={`upVote for ${c.objectID}`}
                   role="button"
                   tabIndex={0}
                   onKeyDown={() => upVote(c.objectID)}
@@ -132,7 +133,7 @@ const HomePage = ({
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'flex-end',
-                color: '#EC702D',
+                color: '#bf4808',
                 fontWeight: 'bold',
                 fontSize: '1rem',
                 padding: 10,
@@ -141,6 +142,7 @@ const HomePage = ({
               <If condition={page && page !== 1}>
                 <span
                   className="btn"
+                  aria-label="Previous"
                   role="button"
                   tabIndex={0}
                   onKeyDown={previous}
@@ -153,7 +155,14 @@ const HomePage = ({
                 <span style={{ margin: '0 5px' }}>|</span>
               </If>
               <If condition={!page || page < news.nbPages - 1}>
-                <span className="btn" role="button" tabIndex={0} onKeyDown={next} onClick={next}>
+                <span
+                  className="btn"
+                  aria-label="Next"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={next}
+                  onClick={next}
+                >
                   Next
                 </span>
               </If>

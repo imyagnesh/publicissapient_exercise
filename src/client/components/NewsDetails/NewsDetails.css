@@ -15,7 +15,7 @@ a {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-    color: #868488;
+    color: #515152;
     
   }
 
@@ -28,13 +28,15 @@ a {
   }
 
   .clrGray {
-    color: #868488;
+    color: #515152;
   }
 
-  .mr5 {
-      margin-right: 5px;
+  .mr8 {
+      margin-right: 8px;
   }
 
   .btn {
       cursor: pointer;
+      min-height: 48px;
+      margin: 0px 8px;
   }

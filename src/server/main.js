@@ -2,14 +2,23 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import compression from 'compression';
+import { Helmet } from 'react-helmet';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
 import { ChunkExtractor } from '@loadable/server';
+import robots from 'express-robots-txt';
 import { Provider } from 'react-redux';
-import configureStore from '../Shared/store/createStore';
-import sagas from '../Shared/Sagas';
+import configureStore from '../redux/store/createStore';
+import sagas from '../redux/Sagas';
 
 const app = express();
+
+app.use(
+  robots({
+    UserAgent: '*',
+    Disallow: '',
+  }),
+);
 
 function shouldCompress(req, res) {
   if (req.headers['x-no-compression']) return false;
@@ -25,7 +34,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../../public'), { maxAge: '30d' }));
 
 if (process.env.NODE_ENV !== 'production') {
   /* eslint-disable global-require, import/no-extraneous-dependencies */
@@ -51,6 +60,10 @@ const nodeStats = path.resolve(__dirname, '../../public/dist/node/loadable-stats
 
 const webStats = path.resolve(__dirname, '../../public/dist/web/loadable-stats.json');
 
+// app.get('/sw.js', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'sw.js'));
+// });
+
 app.get('*', (req, res) => {
   const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats });
   const { default: App } = nodeExtractor.requireEntrypoint();
@@ -73,12 +86,18 @@ app.get('*', (req, res) => {
 
   store.runSaga(sagas);
 
-  res.set('content-type', 'text/html');
+  const helmet = Helmet.renderStatic();
+  // res.set('content-type', 'text/html');
   res.send(`
       <!DOCTYPE html>
-      <html>
+      <html lang="en">
         <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="https://hn.algolia.com/" />
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+        ${helmet.link.toString()}
         ${webExtractor.getLinkTags()}
         ${webExtractor.getStyleTags()}
         </head>
@@ -91,6 +110,17 @@ app.get('*', (req, res) => {
                   /</g,
                   '\\u003c',
                 )}
+            </script>
+            <script>
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/dist/web/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                  }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                  });
+                });
+              }
             </script>
           ${webExtractor.getScriptTags()}
         </body>

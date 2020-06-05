@@ -1,7 +1,11 @@
+/* eslint-disable global-require */
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { GenerateSW } from 'workbox-webpack-plugin';
+// import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+// import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 const DIST_PATH = path.resolve(__dirname, 'public/dist');
 const production = process.env.NODE_ENV === 'production';
@@ -27,10 +31,14 @@ const getConfig = (target) => ({
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [require('autoprefixer')],
+            },
+          },
         ],
       },
       {
@@ -59,7 +67,21 @@ const getConfig = (target) => ({
     publicPath: `/dist/${target}/`,
     libraryTarget: target === 'node' ? 'commonjs2' : undefined,
   },
-  plugins: [new LoadablePlugin(), new MiniCssExtractPlugin()],
+  plugins: [
+    new LoadablePlugin(),
+    new MiniCssExtractPlugin(),
+    new GenerateSW({
+      swDest: 'sw.js',
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('https://hn.algolia.com/api/'),
+          handler: 'StaleWhileRevalidate',
+        },
+      ],
+    }),
+  ],
 });
 
 export default [getConfig('web'), getConfig('node')];
