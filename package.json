@@ -11,6 +11,7 @@
     "build:webpack": "webpack",
     "build:lib": "babel -d lib src",
     "start": "NODE_ENV=production node lib/server/main.js",
+    "heroku-postbuild": "npm install && npm run build",
     "lint": "eslint .",
     "lint:write": "eslint --debug src/ --fix",
     "prettier": "prettier --write 'src/**/*.{ts,js,css,html}'"
