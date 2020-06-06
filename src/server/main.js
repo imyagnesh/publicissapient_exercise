@@ -56,9 +56,9 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
-const nodeStats = path.resolve(__dirname, '../../public/dist/node/loadable-stats.json');
+const nodeStats = path.resolve('../../public/dist/node/loadable-stats.json');
 
-const webStats = path.resolve(__dirname, '../../public/dist/web/loadable-stats.json');
+const webStats = path.resolve('../../public/dist/web/loadable-stats.json');
 
 // app.get('/sw.js', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, 'sw.js'));
