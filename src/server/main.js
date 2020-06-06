@@ -34,7 +34,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname, '../../public'), { maxAge: '30d' }));
+app.use(express.static('public'));
 
 if (process.env.NODE_ENV !== 'production') {
   /* eslint-disable global-require, import/no-extraneous-dependencies */
