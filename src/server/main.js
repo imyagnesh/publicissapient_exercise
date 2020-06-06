@@ -34,7 +34,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, '../../public'), { maxAge: '30d' }));
 
 if (process.env.NODE_ENV !== 'production') {
   /* eslint-disable global-require, import/no-extraneous-dependencies */
@@ -56,9 +56,9 @@ if (process.env.NODE_ENV !== 'production') {
   );
 }
 
-const nodeStats = path.resolve('../../public/dist/node/loadable-stats.json');
+const nodeStats = path.resolve(__dirname, '../../public/dist/node/loadable-stats.json');
 
-const webStats = path.resolve('../../public/dist/web/loadable-stats.json');
+const webStats = path.resolve(__dirname, '../../public/dist/web/loadable-stats.json');
 
 // app.get('/sw.js', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, 'sw.js'));
@@ -87,8 +87,8 @@ app.get('*', (req, res) => {
   store.runSaga(sagas);
 
   const helmet = Helmet.renderStatic();
-  console.warn(webExtractor.getScriptTags());
   // res.set('content-type', 'text/html');
+  console.warn(webExtractor.getScriptTags());
   res.send(`
       <!DOCTYPE html>
       <html lang="en">
@@ -115,7 +115,7 @@ app.get('*', (req, res) => {
             <script>
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/dist/web/sw.js').then(function(registration) {
+                  navigator.serviceWorker.register('dist/web/sw.js').then(function(registration) {
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                   }, function(err) {
                     console.log('ServiceWorker registration failed: ', err);
