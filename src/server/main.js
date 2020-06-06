@@ -32,7 +32,7 @@ app.use(
   }),
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.resolve(__dirname, '../../public'), { maxAge: '30d' }));
 
