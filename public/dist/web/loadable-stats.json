@@ -2,35 +2,33 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "a288ec6c21faed06f28c",
+  "hash": "c6a57954dc0cea01cb7b",
   "publicPath": "dist/web/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
   "assetsByChunkName": {
     "main": [
       "main.css",
-      "main-bundle-8bcc3753.js"
+      "main.js"
     ]
   },
   "assets": [
     {
-      "name": "main-bundle-8bcc3753.js",
-      "size": 767211,
+      "name": "main.css",
+      "size": 2075,
       "chunks": [
-        0
+        "main"
       ],
       "chunkNames": [
         "main"
       ],
-      "info": {
-        "immutable": true
-      },
+      "info": {},
       "emitted": false
     },
     {
-      "name": "main.css",
-      "size": 2075,
+      "name": "main.js",
+      "size": 5507925,
       "chunks": [
-        0
+        "main"
       ],
       "chunkNames": [
         "main"
@@ -43,11 +41,11 @@
   "entrypoints": {
     "main": {
       "chunks": [
-        0
+        "main"
       ],
       "assets": [
         "main.css",
-        "main-bundle-8bcc3753.js"
+        "main.js"
       ],
       "children": {},
       "childAssets": {}
@@ -56,11 +54,11 @@
   "namedChunkGroups": {
     "main": {
       "chunks": [
-        0
+        "main"
       ],
       "assets": [
         "main.css",
-        "main-bundle-8bcc3753.js"
+        "main.js"
       ],
       "children": {},
       "childAssets": {}
@@ -85,7 +83,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -97,7 +95,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -127,7 +125,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -139,7 +137,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -169,7 +167,7 @@
       "entrypoints": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"
@@ -181,7 +179,7 @@
       "namedChunkGroups": {
         "mini-css-extract-plugin": {
           "chunks": [
-            0
+            "mini-css-extract-plugin"
           ],
           "assets": [
             "*"

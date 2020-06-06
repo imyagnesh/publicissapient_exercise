@@ -14,4 +14,6 @@ COPY --chown=node:node . .
 
 EXPOSE 8080
 
-CMD [ "npm", "run", "dev"]
+RUN npm run build
+
+CMD [ "npm", "run", "start"]
