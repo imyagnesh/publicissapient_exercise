@@ -88,7 +88,6 @@ app.get('*', (req, res) => {
 
   const helmet = Helmet.renderStatic();
   // res.set('content-type', 'text/html');
-  console.warn(webExtractor.getScriptTags());
   res.send(`
       <!DOCTYPE html>
       <html lang="en">

@@ -104,11 +104,20 @@ define("./sw.js",['./workbox-40e650fa'], function (workbox) { 'use strict';
    */
 
   workbox.precacheAndRoute([{
+    "url": "dist/web/HomePage.css",
+    "revision": "70022af823312f01e04e595d363e5ec3"
+  }, {
+    "url": "dist/web/HomePage.js",
+    "revision": "c6a02e1a6caa1a27ba88f92742353aee"
+  }, {
+    "url": "dist/web/NotFoundPage.js",
+    "revision": "08596b9e279b9fc36b8dda28c7bccfeb"
+  }, {
     "url": "dist/web/loadable-stats.json",
-    "revision": "c3e0f7271ae3d35357a0af64c6744fc9"
+    "revision": "df7f2e82f46243df32a8bbb475d4545c"
   }, {
     "url": "dist/web/main.css",
-    "revision": "e0622c5478d3a11f28da21b150bdd4da"
+    "revision": "68b329da9893e34099c7d8ad5cb9c940"
   }], {});
   workbox.registerRoute(/https:\/\/hn.algolia.com\/api\//, new workbox.StaleWhileRevalidate(), 'GET');
 

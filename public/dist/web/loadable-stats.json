@@ -2,19 +2,61 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "c6a57954dc0cea01cb7b",
+  "hash": "08bf4e938ca590248e6f",
   "publicPath": "dist/web/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/web",
   "assetsByChunkName": {
+    "HomePage": [
+      "HomePage.css",
+      "HomePage.js"
+    ],
+    "NotFoundPage": "NotFoundPage.js",
     "main": [
       "main.css",
       "main.js"
-    ]
+    ],
+    "vendors~HomePage": "vendors~HomePage.js"
   },
   "assets": [
     {
+      "name": "HomePage.css",
+      "size": 2074,
+      "chunks": [
+        "HomePage"
+      ],
+      "chunkNames": [
+        "HomePage"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "HomePage.js",
+      "size": 28317,
+      "chunks": [
+        "HomePage"
+      ],
+      "chunkNames": [
+        "HomePage"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "NotFoundPage.js",
+      "size": 4096,
+      "chunks": [
+        "NotFoundPage"
+      ],
+      "chunkNames": [
+        "NotFoundPage"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "main.css",
-      "size": 2075,
+      "size": 1,
       "chunks": [
         "main"
       ],
@@ -26,12 +68,24 @@
     },
     {
       "name": "main.js",
-      "size": 5507925,
+      "size": 2452028,
       "chunks": [
         "main"
       ],
       "chunkNames": [
         "main"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "vendors~HomePage.js",
+      "size": 3037608,
+      "chunks": [
+        "vendors~HomePage"
+      ],
+      "chunkNames": [
+        "vendors~HomePage"
       ],
       "info": {},
       "emitted": false
@@ -62,12 +116,35 @@
       ],
       "children": {},
       "childAssets": {}
+    },
+    "HomePage": {
+      "chunks": [
+        "vendors~HomePage",
+        "HomePage"
+      ],
+      "assets": [
+        "vendors~HomePage.js",
+        "HomePage.css",
+        "HomePage.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "NotFoundPage": {
+      "chunks": [
+        "NotFoundPage"
+      ],
+      "assets": [
+        "NotFoundPage.js"
+      ],
+      "children": {},
+      "childAssets": {}
     }
   },
   "logging": {
     "webpack.buildChunkGraph.visitModules": {
       "entries": [],
-      "filteredEntries": 2,
+      "filteredEntries": 5,
       "debug": false
     }
   },

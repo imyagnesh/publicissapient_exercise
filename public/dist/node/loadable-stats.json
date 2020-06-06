@@ -2,10 +2,15 @@
   "errors": [],
   "warnings": [],
   "version": "4.43.0",
-  "hash": "d3526d9f2e0305cbc66d",
+  "hash": "6166691ccd79bc9c601c",
   "publicPath": "dist/node/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/node",
   "assetsByChunkName": {
+    "HomePage": [
+      "HomePage.css",
+      "HomePage.js"
+    ],
+    "NotFoundPage": "NotFoundPage.js",
     "main": [
       "main.css",
       "main.js"
@@ -13,8 +18,44 @@
   },
   "assets": [
     {
+      "name": "HomePage.css",
+      "size": 2074,
+      "chunks": [
+        "HomePage"
+      ],
+      "chunkNames": [
+        "HomePage"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "HomePage.js",
+      "size": 28354,
+      "chunks": [
+        "HomePage"
+      ],
+      "chunkNames": [
+        "HomePage"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "NotFoundPage.js",
+      "size": 3863,
+      "chunks": [
+        "NotFoundPage"
+      ],
+      "chunkNames": [
+        "NotFoundPage"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "main.css",
-      "size": 2075,
+      "size": 1,
       "chunks": [
         "main"
       ],
@@ -26,7 +67,7 @@
     },
     {
       "name": "main.js",
-      "size": 40805,
+      "size": 18907,
       "chunks": [
         "main"
       ],
@@ -62,12 +103,33 @@
       ],
       "children": {},
       "childAssets": {}
+    },
+    "HomePage": {
+      "chunks": [
+        "HomePage"
+      ],
+      "assets": [
+        "HomePage.css",
+        "HomePage.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "NotFoundPage": {
+      "chunks": [
+        "NotFoundPage"
+      ],
+      "assets": [
+        "NotFoundPage.js"
+      ],
+      "children": {},
+      "childAssets": {}
     }
   },
   "logging": {
     "webpack.buildChunkGraph.visitModules": {
       "entries": [],
-      "filteredEntries": 2,
+      "filteredEntries": 5,
       "debug": false
     }
   },
