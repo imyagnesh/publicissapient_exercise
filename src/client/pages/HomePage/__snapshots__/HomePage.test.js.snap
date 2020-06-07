@@ -68,13 +68,11 @@ exports[`test HomePage should call api and render data 1`] = `
               role="button"
               tabindex="0"
             >
-              <svg
+              <arrow_drop_up.svg
                 fill="#979797"
                 height="32"
                 width="32"
-              >
-                arrow_drop_up.svg
-              </svg>
+              />
             </div>
           </td>
           <td
@@ -151,13 +149,11 @@ exports[`test HomePage should call api and render data 1`] = `
               role="button"
               tabindex="0"
             >
-              <svg
+              <arrow_drop_up.svg
                 fill="#979797"
                 height="32"
                 width="32"
-              >
-                arrow_drop_up.svg
-              </svg>
+              />
             </div>
           </td>
           <td
