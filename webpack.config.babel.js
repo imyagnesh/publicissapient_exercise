@@ -43,20 +43,7 @@ const getConfig = (target) => ({
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              caller: { target },
-            },
-          },
-          {
-            loader: 'react-svg-loader',
-            options: {
-              jsx: true, // true outputs JSX tags
-            },
-          },
-        ],
+        use: ['@svgr/webpack'],
       },
     ],
   },

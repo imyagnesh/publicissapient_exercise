@@ -12,7 +12,7 @@
     "build:webpack": "webpack",
     "build:lib": "babel -d lib src",
     "start": "NODE_ENV=production node lib/server/main.js",
-    "test": "jest -c jest.config.js --watch",
+    "test": "jest",
     "lint": "eslint src/",
     "lint:write": "eslint --debug src/ --fix",
     "prettier": "prettier --write 'src/**/*.{ts,js,css,html}'"
@@ -24,19 +24,22 @@
     "@babel/plugin-proposal-export-default-from": "^7.10.1",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.1",
     "@babel/plugin-proposal-optional-chaining": "^7.10.1",
+    "@babel/plugin-syntax-export-default-from": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
     "@loadable/babel-plugin": "^5.12.0",
     "@loadable/webpack-plugin": "^5.12.0",
+    "@svgr/webpack": "^5.4.0",
     "autoprefixer": "^9.8.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.0.1",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-jsx-control-statements": "^4.1.0",
     "babel-plugin-syntax-optional-chaining": "^7.0.0-alpha.13",
+    "babel-preset-react-app": "^9.1.2",
     "css-loader": "^3.5.3",
-    "eslint": "^7.1.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
@@ -46,17 +49,21 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.0.1",
+    "jest": "24.9.0",
+    "jest-cli": "^26.0.1",
     "jest-environment-jsdom-fourteen": "^1.0.1",
+    "jest-svg-transformer": "^1.0.0",
+    "jest-transform-css": "^2.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "nodemon": "^2.0.4",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
+    "react-scripts": "^3.4.1",
     "react-svg-loader": "^3.0.3",
     "react-test-renderer": "^16.13.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.43.0",
+    "webpack": "4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-node-externals": "^1.7.2",
@@ -86,5 +93,39 @@
     "recharts": "^1.8.5",
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [ "<rootDir>/config/setupTest.js"],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ], 
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx}"
+    ],
+    "testEnvironment": "jest-environment-jsdom-fourteen",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "modulePaths": [],
+    "moduleNameMapper": {
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "testPathIgnorePatterns": ["/node_modules/", "/public/", "/lib/"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node"
+    ]    
   }
 }

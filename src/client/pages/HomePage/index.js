@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -16,11 +15,11 @@ import {
 } from 'recharts';
 import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../constants/actionTypes';
 import { action } from '../../../utils';
-import ResponsiveTable from '../../components/ResponsiveTable';
-import NewsDetails from '../../components/NewsDetails';
-import Divider from '../../components/Divider';
+import ResponsiveTable from '../../components/ResponsiveTable/ResponsiveTable';
+import NewsDetails from '../../components/NewsDetails/NewsDetails';
+import Divider from '../../components/Divider/Divider';
 
-import UpIcon from '../../assets/icons/arrow_drop_up.svg';
+import { ReactComponent as UpIcon } from '../../assets/icons/arrow_drop_up.svg';
 
 const cols = {
   comments: { title: 'Comments', style: { width: '5%' } },

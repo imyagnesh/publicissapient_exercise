@@ -25,6 +25,7 @@ module.exports = (api) => {
     ],
     plugins: [
       'jsx-control-statements',
+      '@babel/plugin-proposal-class-properties',
       '@babel/plugin-transform-runtime',
       '@babel/plugin-proposal-export-default-from',
       '@babel/plugin-syntax-dynamic-import',

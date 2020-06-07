@@ -1,15 +1,14 @@
 {
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    "./src/client/pages/HomePage/index.js 80:46-52\n\"export 'ReactComponent' (imported as 'UpIcon') was not found in '../../assets/icons/arrow_drop_up.svg'\n @ ./src/client/App.js\n @ ./src/client/main-node.js"
+  ],
   "version": "4.43.0",
-  "hash": "6166691ccd79bc9c601c",
+  "hash": "681037c578bc812ec4ed",
   "publicPath": "dist/node/",
   "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/node",
   "assetsByChunkName": {
-    "HomePage": [
-      "HomePage.css",
-      "HomePage.js"
-    ],
+    "HomePage": "HomePage.js",
     "NotFoundPage": "NotFoundPage.js",
     "main": [
       "main.css",
@@ -18,20 +17,8 @@
   },
   "assets": [
     {
-      "name": "HomePage.css",
-      "size": 2074,
-      "chunks": [
-        "HomePage"
-      ],
-      "chunkNames": [
-        "HomePage"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "HomePage.js",
-      "size": 28354,
+      "size": 26601,
       "chunks": [
         "HomePage"
       ],
@@ -67,7 +54,7 @@
     },
     {
       "name": "main.js",
-      "size": 18907,
+      "size": 16175,
       "chunks": [
         "main"
       ],
@@ -109,7 +96,6 @@
         "HomePage"
       ],
       "assets": [
-        "HomePage.css",
         "HomePage.js"
       ],
       "children": {},
@@ -134,90 +120,6 @@
     }
   },
   "children": [
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "dist/node/",
-      "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/node",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/components/NewsDetails/NewsDetails.css"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "dist/node/",
-      "outputPath": "/Users/yagneshmodh/Documents/Projects/publicissapient_exercise/public/dist/node",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            "mini-css-extract-plugin"
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin node_modules/css-loader/dist/cjs.js!node_modules/postcss-loader/src/index.js??ref--5-2!src/client/components/ResponsiveTable/ResponsiveTable.css"
-    },
     {
       "errors": [],
       "warnings": [],

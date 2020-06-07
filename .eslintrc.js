@@ -26,7 +26,7 @@ module.exports = {
   },
   plugins: ['react', 'import', 'jsx-a11y', 'prettier', 'react-hooks', 'jsx-control-statements'],
   rules: {
-    'jsx-control-statements/jsx-jcs-no-undef': 2,
+    'react/jsx-no-undef': [2, { allowGlobals: true }],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
     'react-hooks/rules-of-hooks': 'error',
