@@ -1,4 +1,6 @@
 import path from 'path';
+// import spdy from 'spdy';
+// import fs from 'fs';
 import express from 'express';
 import React from 'react';
 import compression from 'compression';
@@ -32,7 +34,7 @@ app.use(
   }),
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, '../../public'), { maxAge: '30d' }));
 
@@ -152,7 +154,12 @@ app.get('*', (req, res) => {
   store.close();
 });
 
-// eslint-disable-next-line no-console
+// const options = {
+//   key: fs.readFileSync(path.resolve(__dirname, '../../server.key')),
+//   cert: fs.readFileSync(path.resolve(__dirname, '../../server.crt')),
+// };
+
+// spdy.createServer(options, app).listen(port, () => {
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
 });

@@ -1,4 +1,4 @@
-define("./workbox-e48b05d0.js",['exports'], function (exports) { 'use strict';
+define("./workbox-e501f73d.js",['exports'], function (exports) { 'use strict';
 
     try {
       self['workbox:core:5.1.3'] && _();
@@ -2544,6 +2544,173 @@ define("./workbox-e48b05d0.js",['exports'], function (exports) { 'use strict';
 
     }
 
+    /*
+      Copyright 2018 Google LLC
+
+      Use of this source code is governed by an MIT-style
+      license that can be found in the LICENSE file or at
+      https://opensource.org/licenses/MIT.
+    */
+    /**
+     * An implementation of a [cache-first]{@link https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network}
+     * request strategy.
+     *
+     * A cache first strategy is useful for assets that have been revisioned,
+     * such as URLs like `/styles/example.a8f5f1.css`, since they
+     * can be cached for long periods of time.
+     *
+     * If the network request fails, and there is no cache match, this will throw
+     * a `WorkboxError` exception.
+     *
+     * @memberof module:workbox-strategies
+     */
+
+    class CacheFirst {
+      /**
+       * @param {Object} options
+       * @param {string} options.cacheName Cache name to store and retrieve
+       * requests. Defaults to cache names provided by
+       * [workbox-core]{@link module:workbox-core.cacheNames}.
+       * @param {Array<Object>} options.plugins [Plugins]{@link https://developers.google.com/web/tools/workbox/guides/using-plugins}
+       * to use in conjunction with this caching strategy.
+       * @param {Object} options.fetchOptions Values passed along to the
+       * [`init`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters)
+       * of all fetch() requests made by this strategy.
+       * @param {Object} options.matchOptions [`CacheQueryOptions`](https://w3c.github.io/ServiceWorker/#dictdef-cachequeryoptions)
+       */
+      constructor(options = {}) {
+        this._cacheName = cacheNames.getRuntimeName(options.cacheName);
+        this._plugins = options.plugins || [];
+        this._fetchOptions = options.fetchOptions;
+        this._matchOptions = options.matchOptions;
+      }
+      /**
+       * This method will perform a request strategy and follows an API that
+       * will work with the
+       * [Workbox Router]{@link module:workbox-routing.Router}.
+       *
+       * @param {Object} options
+       * @param {Request|string} options.request A request to run this strategy for.
+       * @param {Event} [options.event] The event that triggered the request.
+       * @return {Promise<Response>}
+       */
+
+
+      async handle({
+        event,
+        request
+      }) {
+        const logs = [];
+
+        if (typeof request === 'string') {
+          request = new Request(request);
+        }
+
+        {
+          finalAssertExports$1.isInstance(request, Request, {
+            moduleName: 'workbox-strategies',
+            className: 'CacheFirst',
+            funcName: 'makeRequest',
+            paramName: 'request'
+          });
+        }
+
+        let response = await cacheWrapper.match({
+          cacheName: this._cacheName,
+          request,
+          event,
+          matchOptions: this._matchOptions,
+          plugins: this._plugins
+        });
+        let error;
+
+        if (!response) {
+          {
+            logs.push(`No response found in the '${this._cacheName}' cache. ` + `Will respond with a network request.`);
+          }
+
+          try {
+            response = await this._getFromNetwork(request, event);
+          } catch (err) {
+            error = err;
+          }
+
+          {
+            if (response) {
+              logs.push(`Got response from network.`);
+            } else {
+              logs.push(`Unable to get a response from the network.`);
+            }
+          }
+        } else {
+          {
+            logs.push(`Found a cached response in the '${this._cacheName}' cache.`);
+          }
+        }
+
+        {
+          logger$1.groupCollapsed(messages$2.strategyStart('CacheFirst', request));
+
+          for (const log of logs) {
+            logger$1.log(log);
+          }
+
+          messages$2.printFinalResponse(response);
+          logger$1.groupEnd();
+        }
+
+        if (!response) {
+          throw new WorkboxError$1('no-response', {
+            url: request.url,
+            error
+          });
+        }
+
+        return response;
+      }
+      /**
+       * Handles the network and cache part of CacheFirst.
+       *
+       * @param {Request} request
+       * @param {Event} [event]
+       * @return {Promise<Response>}
+       *
+       * @private
+       */
+
+
+      async _getFromNetwork(request, event) {
+        const response = await fetchWrapper.fetch({
+          request,
+          event,
+          fetchOptions: this._fetchOptions,
+          plugins: this._plugins
+        }); // Keep the service worker while we put the request to the cache
+
+        const responseClone = response.clone();
+        const cachePutPromise = cacheWrapper.put({
+          cacheName: this._cacheName,
+          request,
+          response: responseClone,
+          event,
+          plugins: this._plugins
+        });
+
+        if (event) {
+          try {
+            event.waitUntil(cachePutPromise);
+          } catch (error) {
+            {
+              logger$1.warn(`Unable to ensure service worker stays alive when ` + `updating cache for '${getFriendlyURL$1(request.url)}'.`);
+            }
+          }
+        }
+
+        return response;
+      }
+
+    }
+
     try {
       self['workbox:core:5.1.3'] && _();
     } catch (e) {}
@@ -4728,6 +4895,7 @@ define("./workbox-e48b05d0.js",['exports'], function (exports) { 'use strict';
       addRoute(options);
     }
 
+    exports.CacheFirst = CacheFirst;
     exports.StaleWhileRevalidate = StaleWhileRevalidate;
     exports.clientsClaim = clientsClaim;
     exports.precacheAndRoute = precacheAndRoute;
@@ -4735,4 +4903,4 @@ define("./workbox-e48b05d0.js",['exports'], function (exports) { 'use strict';
     exports.skipWaiting = skipWaiting;
 
 });
-//# sourceMappingURL=workbox-e48b05d0.js.map
+//# sourceMappingURL=workbox-e501f73d.js.map

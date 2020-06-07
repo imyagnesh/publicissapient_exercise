@@ -107,11 +107,11 @@ const getConfig = (target) => ({
         },
         {
           urlPattern: new RegExp('.css$'),
-          handler: 'cacheFirst',
+          handler: 'CacheFirst',
         },
         {
           urlPattern: new RegExp('.(png|svg|jpg|jpeg)$'),
-          handler: 'cacheFirst',
+          handler: 'CacheFirst',
         },
       ],
     }),

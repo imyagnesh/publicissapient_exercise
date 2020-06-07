@@ -81,7 +81,7 @@ if (!self.define) {
     });
   };
 }
-define("./sw.js",['./workbox-e48b05d0'], function (workbox) { 'use strict';
+define("./sw.js",['./workbox-e501f73d'], function (workbox) { 'use strict';
 
   /**
   * Welcome to your Workbox-powered service worker!
@@ -186,6 +186,8 @@ define("./sw.js",['./workbox-e48b05d0'], function (workbox) { 'use strict';
     "revision": "b20e68fbfa452438d35f6a238f5580a5"
   }], {});
   workbox.registerRoute(/https:\/\/hn.algolia.com\/api\//, new workbox.StaleWhileRevalidate(), 'GET');
+  workbox.registerRoute(/.css$/, new workbox.CacheFirst(), 'GET');
+  workbox.registerRoute(/.(png|svg|jpg|jpeg)$/, new workbox.CacheFirst(), 'GET');
 
 });
 //# sourceMappingURL=sw.js.map
