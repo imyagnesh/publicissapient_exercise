@@ -1,18 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-
+import loadable from '@loadable/component';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
-import {
-  LineChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Line,
-  Label,
-  ResponsiveContainer,
-} from 'recharts';
+import {} from 'recharts';
 import { FETCH_NEWS, REQUEST, UP_VOTE, HIDE_HIT } from '../../../constants/actionTypes';
 import { action } from '../../../utils';
 import ResponsiveTable from '../../components/ResponsiveTable/ResponsiveTable';
@@ -20,6 +11,8 @@ import NewsDetails from '../../components/NewsDetails/NewsDetails';
 import Divider from '../../components/Divider/Divider';
 
 import { ReactComponent as UpIcon } from '../../assets/icons/arrow_drop_up.svg';
+
+const Rechart = loadable.lib(() => import(/* webpackChunkName: 'recharts' */ 'recharts'));
 
 const cols = {
   comments: { title: 'Comments', style: { width: '5%' } },
@@ -66,13 +59,16 @@ const HomePage = ({
                   aria-label={`upVote for ${c.objectID}`}
                   role="button"
                   tabIndex={0}
+                  data-testid={`upvote-${c.objectID}`}
                   onKeyDown={() => upVote(c.objectID)}
                   onClick={() => upVote(c.objectID)}
                 >
                   <UpIcon width={32} height={32} fill="#979797" />
                 </div>
               ),
-              newsDetails: <NewsDetails hit={c} onHide={hideHit} />,
+              newsDetails: (
+                <NewsDetails hit={c} onHide={hideHit} data-testid={`newsDetails-${c.objectID}`} />
+              ),
               objectID: c.objectID,
             },
           ];
@@ -84,7 +80,8 @@ const HomePage = ({
 
   const previous = () => {
     if (page && page !== 1) {
-      push(`/${Number(page) - 1}`);
+      const prevPage = Number(page) - 1;
+      push(`/${prevPage === 1 ? '' : prevPage}`);
     }
   };
 
@@ -112,21 +109,22 @@ const HomePage = ({
       {head()}
       <Choose>
         <When condition={loading}>
-          <h2>Loading....</h2>
+          <h2 data-testid="h2loading">Loading....</h2>
         </When>
         <When condition={error}>
-          <h2>{error}</h2>
+          <h2 data-testid="h2error">{error}</h2>
         </When>
         <When condition={news.hits && news.hits.length <= 0}>
-          <h2>No Records Available</h2>
+          <h2 data-testid="norecords">No Records Available</h2>
         </When>
         <Otherwise>
           <div
             style={{
               background: '#F5F5EF',
             }}
+            data-testid="container"
           >
-            <ResponsiveTable columns={cols} rows={newsList} />
+            <ResponsiveTable columns={cols} rows={newsList} data-testid="responsivetable" />
             <div
               style={{
                 display: 'flex',
@@ -146,6 +144,7 @@ const HomePage = ({
                   tabIndex={0}
                   onKeyDown={previous}
                   onClick={previous}
+                  data-testid="previousbtn"
                 >
                   Previous
                 </span>
@@ -161,6 +160,7 @@ const HomePage = ({
                   tabIndex={0}
                   onKeyDown={next}
                   onClick={next}
+                  data-testid="nextbtn"
                 >
                   Next
                 </span>
@@ -169,22 +169,43 @@ const HomePage = ({
             <Divider />
             <If condition={newsList.length > 0}>
               <div style={{ margin: 10 }}>
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={newsList} margin={{ top: 10, right: 10, left: 20, bottom: 100 }}>
-                    <CartesianGrid vertical={false} />
-                    <XAxis dataKey="objectID" angle={-90} textAnchor="end" verticalAnchor="middle">
-                      <Label value="ID" position="bottom" offset={50} />
-                    </XAxis>
-                    <YAxis label={{ value: 'Votes', angle: -90, position: 'left' }} />
-                    <Tooltip />
-                    <Line
-                      dataKey="voteCount"
-                      stroke="#366396"
-                      strokeWidth={4}
-                      dot={{ strokeWidth: 6, r: 3 }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
+                <Rechart>
+                  {({
+                    LineChart,
+                    CartesianGrid,
+                    XAxis,
+                    YAxis,
+                    Tooltip,
+                    Line,
+                    Label,
+                    ResponsiveContainer,
+                  }) => (
+                    <ResponsiveContainer width="100%" height={300}>
+                      <LineChart
+                        data={newsList}
+                        margin={{ top: 10, right: 10, left: 20, bottom: 100 }}
+                      >
+                        <CartesianGrid vertical={false} />
+                        <XAxis
+                          dataKey="objectID"
+                          angle={-90}
+                          textAnchor="end"
+                          verticalAnchor="middle"
+                        >
+                          <Label value="ID" position="bottom" offset={50} />
+                        </XAxis>
+                        <YAxis label={{ value: 'Votes', angle: -90, position: 'left' }} />
+                        <Tooltip />
+                        <Line
+                          dataKey="voteCount"
+                          stroke="#366396"
+                          strokeWidth={4}
+                          dot={{ strokeWidth: 6, r: 3 }}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  )}
+                </Rechart>
               </div>
               <Divider />
             </If>

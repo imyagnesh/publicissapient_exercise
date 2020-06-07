@@ -1,25 +1,24 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { render as rtlRender } from '@testing-library/react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from '../redux/reducers';
+import configureStore from '../redux/store/createStore';
+import sagas from '../redux/Sagas';
 
 const reducerInitialState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
 
-function render(
-  ui,
-  {
-    initialState = reducerInitialState,
-    store = createStore(reducers, initialState),
-    ...renderOptions
-  } = {},
-) {
-  function Wrapper({ children }) {
+const store = configureStore(reducerInitialState);
+
+store.runSaga(sagas);
+
+function render(ui, { ...renderOptions } = {}) {
+  const Wrapper = ({ children }) => {
     return <Provider store={store}>{children}</Provider>;
-  }
+  };
+  Wrapper.propTypes = {
+    children: PropTypes.element.isRequired,
+  };
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
 

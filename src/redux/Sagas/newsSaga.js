@@ -39,43 +39,35 @@ function* fetchNews({ payload: page }) {
 }
 
 function* upVote({ payload: objectID }) {
-  try {
-    const news = yield select(getNews);
-    const index = news.hits.findIndex((x) => x.objectID === objectID);
-    const value = { ...news.hits[index], points: news.hits[index].points + 1 };
-    const updatedHits = [...news.hits.slice(0, index), value, ...news.hits.slice(index + 1)];
-    yield call(persistData, {
-      key: 'upvotes',
-      value: {
-        objectID: news.hits[index].objectID,
-        points: news.hits[index].points + 1,
-      },
-      objectID,
-    });
-    yield put(action(`${UP_VOTE}_${SUCCESS}`, { ...news, hits: updatedHits }));
-  } catch (error) {
-    yield put(action(`${FETCH_NEWS}_${FAIL}`, error));
-  }
+  const news = yield select(getNews);
+  const index = news.hits.findIndex((x) => x.objectID === objectID);
+  const value = { ...news.hits[index], points: news.hits[index].points + 1 };
+  const updatedHits = [...news.hits.slice(0, index), value, ...news.hits.slice(index + 1)];
+  yield call(persistData, {
+    key: 'upvotes',
+    value: {
+      objectID: news.hits[index].objectID,
+      points: news.hits[index].points + 1,
+    },
+    objectID,
+  });
+  yield put(action(`${UP_VOTE}_${SUCCESS}`, { ...news, hits: updatedHits }));
 }
 
 function* hideHit({ payload: objectID }) {
-  try {
-    const news = yield select(getNews);
-    const index = news.hits.findIndex((x) => x.objectID === objectID);
-    const value = { ...news.hits[index], hide: true };
-    const updatedHits = [...news.hits.slice(0, index), value, ...news.hits.slice(index + 1)];
-    yield call(persistData, {
-      key: 'hiddenHits',
-      value: {
-        objectID: news.hits[index].objectID,
-        hide: true,
-      },
-      objectID,
-    });
-    yield put(action(`${HIDE_HIT}_${SUCCESS}`, { ...news, hits: updatedHits }));
-  } catch (error) {
-    yield put(action(`${HIDE_HIT}_${FAIL}`, error));
-  }
+  const news = yield select(getNews);
+  const index = news.hits.findIndex((x) => x.objectID === objectID);
+  const value = { ...news.hits[index], hide: true };
+  const updatedHits = [...news.hits.slice(0, index), value, ...news.hits.slice(index + 1)];
+  yield call(persistData, {
+    key: 'hiddenHits',
+    value: {
+      objectID: news.hits[index].objectID,
+      hide: true,
+    },
+    objectID,
+  });
+  yield put(action(`${HIDE_HIT}_${SUCCESS}`, { ...news, hits: updatedHits }));
 }
 
 function* fetchNewsRequest() {

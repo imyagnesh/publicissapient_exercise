@@ -26,9 +26,12 @@ module.exports = {
   },
   plugins: ['react', 'import', 'jsx-a11y', 'prettier', 'react-hooks', 'jsx-control-statements'],
   rules: {
+    'global-require': 'off',
+    'no-underscore-dangle': 'off',
     'react/jsx-no-undef': [2, { allowGlobals: true }],
     'import/no-unresolved': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'prettier/prettier': ['error'],

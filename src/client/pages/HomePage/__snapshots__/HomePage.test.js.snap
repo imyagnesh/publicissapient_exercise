@@ -1,3 +1,236 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`can render with redux with defaults 1`] = `undefined`;
+exports[`test HomePage should call api and render data 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="container"
+    style="background: rgb(245, 245, 239);"
+  >
+    <table
+      class="responsive-table"
+    >
+      <thead>
+        <tr>
+          <th
+            data-testid="th-comments"
+            scope="col"
+            style="width: 5%;"
+          >
+            Comments
+          </th>
+          <th
+            data-testid="th-voteCount"
+            scope="col"
+            style="width: 5%;"
+          >
+            Vote Count
+          </th>
+          <th
+            data-testid="th-upVote"
+            scope="col"
+            style="width: 5%;"
+          >
+            UpVote
+          </th>
+          <th
+            data-testid="th-newsDetails"
+            scope="col"
+            style="width: 85%; text-align: left;"
+          >
+            News Details
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          data-testid="tr-22310813"
+        >
+          <td
+            data-label="Comments"
+            data-testid="td-comments-22310813"
+          >
+            222
+          </td>
+          <td
+            data-label="Vote Count"
+            data-testid="td-voteCount-22310813"
+          >
+            2760
+          </td>
+          <td
+            data-label="UpVote"
+            data-testid="td-upVote-22310813"
+          >
+            <div
+              aria-label="upVote for 22310813"
+              class="btn"
+              data-testid="upvote-22310813"
+              role="button"
+              tabindex="0"
+            >
+              <svg
+                fill="#979797"
+                height="32"
+                width="32"
+              >
+                arrow_drop_up.svg
+              </svg>
+            </div>
+          </td>
+          <td
+            data-label="News Details"
+            data-testid="td-newsDetails-22310813"
+            style="text-align: left;"
+          >
+            <div
+              style="display: inline-block;"
+            >
+              <span
+                class="mr8 title"
+              >
+                Gears
+              </span>
+              <a
+                class="mr8"
+                href="https://ciechanow.ski/gears/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                (https://ciechanow.ski/gears/)
+              </a>
+              <span
+                class="mr8 fs1 clrGray"
+              >
+                by
+              </span>
+              <span
+                class="mr8 fs1"
+              >
+                robert-boehnke
+              </span>
+              <span
+                class="mr8 fs1 clrGray"
+              >
+                4 months ago
+              </span>
+              <span
+                aria-label="hide hit of 22310813"
+                class="btn"
+                data-testid="hideBtn-22310813"
+                role="button"
+                tabindex="0"
+              >
+                [ hide ]
+              </span>
+            </div>
+          </td>
+        </tr>
+        <tr
+          data-testid="tr-5536739"
+        >
+          <td
+            data-label="Comments"
+            data-testid="td-comments-5536739"
+          >
+            0
+          </td>
+          <td
+            data-label="Vote Count"
+            data-testid="td-voteCount-5536739"
+          >
+            2751
+          </td>
+          <td
+            data-label="UpVote"
+            data-testid="td-upVote-5536739"
+          >
+            <div
+              aria-label="upVote for 5536739"
+              class="btn"
+              data-testid="upvote-5536739"
+              role="button"
+              tabindex="0"
+            >
+              <svg
+                fill="#979797"
+                height="32"
+                width="32"
+              >
+                arrow_drop_up.svg
+              </svg>
+            </div>
+          </td>
+          <td
+            data-label="News Details"
+            data-testid="td-newsDetails-5536739"
+            style="text-align: left;"
+          >
+            <div
+              style="display: inline-block;"
+            >
+              <span
+                class="mr8 title"
+              />
+              <span
+                class="mr8 fs1 clrGray"
+              >
+                by
+              </span>
+              <span
+                class="mr8 fs1"
+              >
+                xijuan
+              </span>
+              <span
+                class="mr8 fs1 clrGray"
+              >
+                about 7 years ago
+              </span>
+              <span
+                aria-label="hide hit of 5536739"
+                class="btn"
+                data-testid="hideBtn-5536739"
+                role="button"
+                tabindex="0"
+              >
+                [ hide ]
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      style="display: flex; flex-direction: row; justify-content: flex-end; color: rgb(191, 72, 8); font-weight: bold; font-size: 1rem; padding: 10px;"
+    >
+      <span
+        aria-label="Next"
+        class="btn"
+        data-testid="nextbtn"
+        role="button"
+        tabindex="0"
+      >
+        Next
+      </span>
+    </div>
+    <div
+      style="height: 4px; background-color: rgb(236, 112, 45);"
+    />
+    <div
+      style="margin: 10px;"
+    >
+      <div
+        class="recharts-responsive-container"
+        style="width: 100%; height: 300px;"
+      >
+        <div
+          style="position: absolute; width: 0px; height: 0px; visibility: hidden; display: none;"
+        />
+      </div>
+    </div>
+    <div
+      style="height: 4px; background-color: rgb(236, 112, 45);"
+    />
+  </div>
+</DocumentFragment>
+`;

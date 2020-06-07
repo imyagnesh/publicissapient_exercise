@@ -92,16 +92,19 @@
     "react-router-dom": "^5.2.0",
     "recharts": "^1.8.5",
     "redux": "^4.0.5",
-    "redux-saga": "^1.1.3"
+    "redux-saga": "^1.1.3",
+    "spdy": "^4.0.2"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "setupFiles": [ "<rootDir>/config/setupTest.js"],
+    "setupFiles": [
+      "<rootDir>/config/setupTest.js"
+    ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
-    ], 
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx}"
@@ -120,12 +123,16 @@
     "moduleNameMapper": {
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
-    "testPathIgnorePatterns": ["/node_modules/", "/public/", "/lib/"],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/public/",
+      "/lib/"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",
       "jsx",
       "node"
-    ]    
+    ]
   }
 }

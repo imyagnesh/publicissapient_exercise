@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { formatDistance } from 'date-fns';
+import loadable from '@loadable/component';
 import './NewsDetails.css';
+
+const DateFns = loadable.lib(() => import(/* webpackChunkName: 'date-fns' */ 'date-fns'));
 
 const NewsDetails = ({ hit, onHide }) => {
   return (
@@ -17,17 +19,22 @@ const NewsDetails = ({ hit, onHide }) => {
         <span className="mr8 fs1">{hit.author}</span>
       </If>
       <If condition={!!hit.created_at}>
-        <span className="mr8 fs1 clrGray">
-          {formatDistance(new Date(hit.created_at), new Date(), {
-            addSuffix: true,
-          })}
-        </span>
+        <DateFns>
+          {({ formatDistance }) => (
+            <span className="mr8 fs1 clrGray">
+              {formatDistance(new Date(hit.created_at), new Date(), {
+                addSuffix: true,
+              })}
+            </span>
+          )}
+        </DateFns>
       </If>
       <span
         role="button"
         tabIndex={0}
         className="btn"
         aria-label={`hide hit of ${hit.objectID}`}
+        data-testid={`hideBtn-${hit.objectID}`}
         onKeyDown={() => onHide(hit.objectID)}
         onClick={() => onHide(hit.objectID)}
       >

@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import 'core-js';
 import React from 'react';
 import { hydrate } from 'react-dom';
@@ -9,6 +8,7 @@ import App from './App';
 import configureStore from '../redux/store/createStore';
 import Sagas from '../redux/Sagas';
 
+// eslint-disable-next-line no-underscore-dangle
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
 

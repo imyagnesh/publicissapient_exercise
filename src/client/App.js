@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import loadable from '@loadable/component';

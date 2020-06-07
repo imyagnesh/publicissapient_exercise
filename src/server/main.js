@@ -1,4 +1,6 @@
 import path from 'path';
+import spdy from 'spdy';
+import fs from 'fs';
 import express from 'express';
 import React from 'react';
 import compression from 'compression';
@@ -37,7 +39,6 @@ const port = process.env.PORT || 8080;
 app.use(express.static(path.resolve(__dirname, '../../public'), { maxAge: '30d' }));
 
 if (process.env.NODE_ENV !== 'production') {
-  /* eslint-disable global-require, import/no-extraneous-dependencies */
   const { default: webpackConfig } = require('../../webpack.config.babel');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpack = require('webpack');
@@ -114,7 +115,7 @@ app.get('*', (req, res) => {
             <script>
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('dist/web/sw.js').then(function(registration) {
+                  navigator.serviceWorker.register('/dist/web/sw.js').then(function(registration) {
                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
                   }, function(err) {
                     console.log('ServiceWorker registration failed: ', err);
@@ -130,7 +131,12 @@ app.get('*', (req, res) => {
   store.close();
 });
 
-// eslint-disable-next-line no-console
-app.listen(port, () => {
+const options = {
+  key: fs.readFileSync(path.resolve(__dirname, '../../server.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '../../server.crt')),
+};
+
+spdy.createServer(options, app).listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`Listening on port: ${port}`);
 });
