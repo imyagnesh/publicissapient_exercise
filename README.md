@@ -1,1 +1,0 @@
-# publicissapient_exercise
