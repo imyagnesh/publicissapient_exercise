@@ -1,12 +1,15 @@
 {
   "presets": ["next/babel"],
   "plugins": [
+    "inline-react-svg",
+    "jsx-control-statements",
     [
       "module-resolver",
       {
         "root": ["./"],
         "alias": {
           "@components": "./components",
+          "@lib": "./lib",
           "@api": "./api",
           "@models": "./models",
           "@screens": "./screens",

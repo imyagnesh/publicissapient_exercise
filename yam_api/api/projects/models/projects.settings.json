@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "projects"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "projectName": {
+      "type": "string"
+    },
+    "company_detail": {
+      "model": "company-details"
+    },
+    "skills": {
+      "collection": "skills"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "video": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Website",
+        "MobileApp"
+      ]
+    }
+  }
+}

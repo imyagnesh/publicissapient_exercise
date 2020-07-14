@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_page_blogs",
+  "info": {
+    "name": "blog",
+    "icon": "check-double"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "blogs": {
+      "collection": "blogs"
+    }
+  }
+}

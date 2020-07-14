@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/training-experiences",
+      "handler": "training-experience.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/training-experiences/count",
+      "handler": "training-experience.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/training-experiences/:id",
+      "handler": "training-experience.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/training-experiences",
+      "handler": "training-experience.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/training-experiences/:id",
+      "handler": "training-experience.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/training-experiences/:id",
+      "handler": "training-experience.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

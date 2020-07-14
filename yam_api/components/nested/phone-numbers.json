@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_nested_phone_numbers",
+  "info": {
+    "name": "Phone Numbers",
+    "icon": "phone-alt"
+  },
+  "options": {},
+  "attributes": {
+    "phoneNumber": {
+      "type": "string"
+    }
+  }
+}

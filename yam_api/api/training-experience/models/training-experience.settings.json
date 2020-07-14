@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_experiences",
+  "info": {
+    "name": "trainingExperience"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "trainingMode": {
+      "type": "enumeration",
+      "enum": [
+        "Online",
+        "Classroom"
+      ]
+    },
+    "company": {
+      "model": "company-details"
+    },
+    "skills": {
+      "collection": "skills"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "totalHours": {
+      "type": "integer"
+    }
+  }
+}

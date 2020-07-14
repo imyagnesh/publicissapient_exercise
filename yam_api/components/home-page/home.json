@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_home_page_homes",
+  "info": {
+    "name": "Home",
+    "icon": "home"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundMedia": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    }
+  }
+}

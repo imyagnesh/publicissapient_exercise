@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_page_skills",
+  "info": {
+    "name": "Skills",
+    "icon": "award"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    },
+    "skills": {
+      "collection": "skills"
+    }
+  }
+}

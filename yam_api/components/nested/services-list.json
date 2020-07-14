@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_nested_services_lists",
+  "info": {
+    "name": "servicesList",
+    "icon": "list"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "svgIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

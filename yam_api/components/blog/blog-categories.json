@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_blog_categories",
+  "info": {
+    "name": "Blog Categories",
+    "icon": "blog"
+  },
+  "options": {},
+  "attributes": {
+    "categoryName": {
+      "type": "string"
+    },
+    "categoryDescription": {
+      "type": "text"
+    }
+  }
+}

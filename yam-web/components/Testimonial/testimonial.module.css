@@ -1,0 +1,157 @@
+/*-----------------------------------------
+*  Testimonial
+-----------------------------------------*/
+/* .slick-slide {
+	padding: 0 8px;
+	box-sizing: border-box;
+ } */
+
+ /* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+
+    opacity: .75;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: -25px;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: '←';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '→';
+}
+
+.slick-next
+{
+    right: -25px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '→';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '←';
+}
+
+ul.slick-dots {
+  text-align: center;
+}
+ul.slick-dots li {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+ul.slick-dots button {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #484848;
+  box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+}
+
+
+.testimonial-col { 
+    padding: 60px 30px 30px;
+    background: #fff;
+    position: relative;
+    margin: 50px 10px 20px;
+    box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+  }
+  .testimonial-col .img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: -40px;
+    left: 0;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: -1px -4px 16px -3px rgba(0, 0, 0, 0.43);
+    right: 0;
+    margin: auto;
+  }
+  
+  .testimonial-col h6 {
+    color: #151515;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .testimonial-col p {
+    margin: 0;
+  }
+  

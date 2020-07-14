@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_resume_achievements",
+  "info": {
+    "name": "achievements",
+    "icon": "anchor"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

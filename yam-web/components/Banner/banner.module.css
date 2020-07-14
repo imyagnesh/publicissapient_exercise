@@ -1,0 +1,64 @@
+/*---------------------------------
+* 06. Home Banner
+-----------------------------------*/
+.full-screen {
+    min-height: 100vh;
+  }
+  
+  .home-banner-01 {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+  }
+  
+  .home-banner-01 h4 {
+    font-size: 25px;
+    color: #222;
+    margin: 0 0 10px;
+  }
+  .home-banner-01 h5 {
+    font-size: 65px;
+    font-weight: 700;
+    color: #222;
+    margin:0 0 20px;
+  }
+  .home-banner-01 p {
+    width: 600px;
+    max-width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    padding: 0 0 35px;
+    color: #222;
+    margin: 0;
+  }
+  
+  .home-banner-01 .m-btn {
+    min-width: 160px;
+    margin: 8px;
+  }
+  
+  @media (max-width: 767px){
+    .home-banner-01 .home-text-center:after {
+      width: 3px;
+    }
+    .home-banner-01 h4 {
+      font-size: 16px;
+      margin: 0 0 5px;
+    }
+    .home-banner-01 h5 {
+      font-size: 36px;
+      margin: 0 0 10px;
+    }
+    .home-banner-01 p {
+      font-size: 14px;
+      padding: 0 0 20px;
+    }
+    .home-banner-01 .m-btn-link {
+      font-size: 13px;
+    }
+  }
+  

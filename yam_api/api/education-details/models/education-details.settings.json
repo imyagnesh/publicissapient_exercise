@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "education_details",
+  "info": {
+    "name": "educationDetails"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "degree": {
+      "type": "string"
+    },
+    "studyField": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "grade": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "school": {
+      "type": "string"
+    }
+  }
+}

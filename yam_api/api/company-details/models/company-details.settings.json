@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "company_details",
+  "info": {
+    "name": "companyDetails"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

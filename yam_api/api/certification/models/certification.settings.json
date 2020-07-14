@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "certifications",
+  "info": {
+    "name": "certification"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "issuingOrganization": {
+      "model": "company-details"
+    },
+    "issueDate": {
+      "type": "date"
+    },
+    "expirationDate": {
+      "type": "date"
+    },
+    "neverExpire": {
+      "type": "boolean"
+    },
+    "credentialID": {
+      "type": "string"
+    },
+    "credentialUrl": {
+      "type": "string"
+    }
+  }
+}

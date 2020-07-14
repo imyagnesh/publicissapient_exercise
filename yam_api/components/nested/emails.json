@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_nested_emails",
+  "info": {
+    "name": "Emails",
+    "icon": "voicemail"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    }
+  }
+}

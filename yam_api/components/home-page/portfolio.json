@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_page_portfolios",
+  "info": {
+    "name": "Portfolio",
+    "icon": "passport"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "projects": {
+      "collection": "projects"
+    }
+  }
+}

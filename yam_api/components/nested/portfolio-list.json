@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_nested_portfolio_lists",
+  "info": {
+    "name": "portfolioList",
+    "icon": "clipboard-list"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Website",
+        "MobileApp"
+      ]
+    },
+    "portfolioImages": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "portfolioLink": {
+      "type": "string"
+    },
+    "videoLink": {
+      "type": "string"
+    }
+  }
+}

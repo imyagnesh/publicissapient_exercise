@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_home_page_contact_mes",
+  "info": {
+    "name": "Contact Me",
+    "icon": "file-contract"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "nested.address"
+    },
+    "phoneNumbers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nested.phone-numbers"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nested.emails"
+    }
+  }
+}

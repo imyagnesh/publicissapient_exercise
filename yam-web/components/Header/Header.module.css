@@ -1,32 +1,38 @@
+
 .header-nav {
   top: 10px;
-  padding: 15px 10px;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+	padding: 15px 10px;
+	-webkit-transition: all 0.2s ease;
+	   -moz-transition: all 0.5s ease;
+	   	 -o-transition: all 0.2s ease;
+			    transition: all 0.2s ease;
 }
 .header-nav .navbar-toggler span {
   background: #fff;
 }
 
 .header-nav .navbar-brand {
-  color: #fff;
-  font-weight: 800;
-  position: relative;
+	color: #fff;
+	font-weight: 800;
+	position: relative;
   font-size: 23px;
 }
 .header-nav .navbar-brand span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 12px;
-  right: -9px;
-  float: left;
+	 width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 12px;
+    right: -9px;
+    float: left;
 }
+
+.navbar-nav {
+  align-items: center;
+}
+
 .header-nav .navbar-nav > li {
-  margin: 0 0 0 20px;
+	margin: 0 0 0 20px;
 }
 .header-nav .navbar-nav .nav-link {
   position: relative;
@@ -40,24 +46,25 @@
   letter-spacing: 0.215em;
 }
 .header-nav .navbar-nav .nav-link:after {
-  content: '';
-  position: absolute;
-  z-index: 10;
-  width: 0;
+	content: '';
+	position: absolute;
+	z-index: 10;
+	width: 0;
   left: 0;
   right: 0;
   bottom: -5px;
   margin: auto;
-  height: 1px;
-  background: #fff;
-  -webkit-transition: ease all 0.2s;
-  -moz-transition: ease all 0.2s;
-  -o-transition: ease all 0.2s;
-  transition: ease all 0.2s;
+	height: 1px;
+	background: #fff;
+	-webkit-transition: ease all 0.2s;
+	   -moz-transition: ease all 0.2s;
+		 -o-transition: ease all 0.2s;
+			transition: ease all 0.2s;
+	
 }
 .header-nav .navbar-nav .nav-link:hover:after,
 .header-nav .navbar-nav .nav-link.active:after {
-  width: 75%;
+	width: 75%;
 }
 
 /*Navbar Toogle*/
@@ -82,6 +89,7 @@
 }
 /**/
 
+
 .header-nav.fixed-header {
   top: 0;
   margin-top: 0;
@@ -90,13 +98,15 @@
   box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 991px) {
+
+@media (max-width: 991px){
+
   .header-nav {
     top: 0;
-    padding: 10px 15px;
+    padding:10px 15px;
   }
   .header-nav.fixed-header {
-    padding: 10px 15px;
+    padding:10px 15px;
   }
   .navbar-nav {
     padding-top: 5px;
@@ -108,6 +118,11 @@
     padding: 0;
   }
 }
+
+/*---------------------------------
+* 06. Header option 2
+-----------------------------------*/
+
 
 .header-nav-white .navbar-nav .nav-link {
   color: #333;

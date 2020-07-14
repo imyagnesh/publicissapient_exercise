@@ -1,0 +1,46 @@
+/*-----------------------------------------
+*  Counter Box
+-----------------------------------------*/
+.counter-section .counter-row {
+    background: #fff;
+    padding: 50px 0;
+    border-radius: 5px;
+    box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .counter-col {
+    position: relative;
+    text-align: center;
+  }
+  
+  .counter-col .count {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+    line-height: 30px;
+  }
+  .counter-col h6 {
+    margin: 0;
+    padding: 15px 0 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 767px){ 
+    .counter-section .counter-row {
+      padding: 20px 0;
+    }
+    .counter-col {
+      margin: 15px 0;
+    }
+    .counter-col:before,
+    .counter-col:after {
+      display: none;
+    }
+    .counter-col h6 {
+      font-size: 12px;
+    }
+  }
+  

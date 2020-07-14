@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_experiences",
+  "info": {
+    "name": "workExperience"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "employmentType": {
+      "type": "enumeration",
+      "enum": [
+        "FullTime",
+        "PartTime",
+        "SelfEmployed",
+        "freelance",
+        "contract"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "currentlyWorking": {
+      "type": "boolean"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "company": {
+      "model": "company-details"
+    }
+  }
+}

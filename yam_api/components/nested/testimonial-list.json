@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_nested_testimonial_lists",
+  "info": {
+    "name": " testimonialList",
+    "icon": "th-list"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "testimonial": {
+      "type": "text"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

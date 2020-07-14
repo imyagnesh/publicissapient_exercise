@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "name": "HomePage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "home": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.home"
+    },
+    "aboutMe": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.about-me"
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-page.meta"
+    },
+    "counter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-page.counter"
+    },
+    "dynamicFields": {
+      "type": "dynamiczone",
+      "components": [
+        "home-page.skills",
+        "home-page.services",
+        "home-page.portfolio",
+        "home-page.testimonial"
+      ]
+    },
+    "ContactMe": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.contact-me"
+    },
+    "blog": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-page.blog"
+    }
+  }
+}

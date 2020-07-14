@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_nested_skill_lists",
+  "info": {
+    "name": "skillList",
+    "icon": "list-ul"
+  },
+  "options": {},
+  "attributes": {
+    "skillName": {
+      "type": "string"
+    },
+    "experty": {
+      "type": "string"
+    }
+  }
+}

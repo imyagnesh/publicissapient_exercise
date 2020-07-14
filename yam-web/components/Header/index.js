@@ -1,8 +1,13 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import classNames from 'classnames';
 import { useRef, useEffect } from 'react';
+import './Header.module.css';
 
 const Header = () => {
   const navbarRef = useRef(null);
   const collapseRef = useRef(null);
+  const { pathname } = useRouter();
 
   useEffect(() => {
     const onScroll = () => {
@@ -11,34 +16,12 @@ const Header = () => {
       } else {
         navbarRef.current.classList.remove('fixed-header');
       }
-      const navlinks = document.querySelectorAll('a.nav-link');
-      navlinks.forEach((element) => {
-        const section = document.getElementById(element.hash.slice(1));
-        const scrollY = window.scrollY || window.pageYOffset;
-        const sectionHeight = section.offsetTop + section.clientHeight;
-        if (scrollY >= section.offsetTop && scrollY < sectionHeight) {
-          element.classList.add('active');
-        } else {
-          element.classList.remove('active');
-        }
-      });
     };
     window.addEventListener('scroll', onScroll, false);
     return () => {
       window.removeEventListener('scroll', onScroll, false);
     };
   }, []);
-
-  const navigate = (e) => {
-    e.preventDefault();
-    const { offsetTop } = document.querySelector(e.target.hash);
-    const scrollOptions = {
-      top: offsetTop,
-      behavior: 'smooth',
-    };
-    window.scrollTo(scrollOptions);
-    collapseRef.current.classList.toggle('show');
-  };
 
   const toggleNavbar = (e) => {
     e.preventDefault();
@@ -90,34 +73,40 @@ const Header = () => {
           >
             <ul className="navbar-nav">
               <li>
-                <a className="nav-link active" href="#home-box" onClick={navigate}>
-                  Home
-                </a>
+                <Link href="/">
+                  <a className={classNames('nav-link', { active: pathname === '/' })}>Home</a>
+                </Link>
+              </li>
+              {/* <li>
+                <Link href="/about">
+                  <a className={classNames('nav-link', { active: pathname === '/about' })}>About</a>
+                </Link>
+              </li> */}
+              <li>
+                <Link href="/resume">
+                  <a className={classNames('nav-link', { active: pathname === '/resume' })}>
+                    Resume
+                  </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="#aboutus" onClick={navigate}>
-                  About Us
-                </a>
+                <Link href="/portfolio">
+                  <a className={classNames('nav-link', { active: pathname === '/portfolio' })}>
+                    Portfolio
+                  </a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="#services" onClick={navigate}>
-                  Services
-                </a>
+                <Link href="/posts">
+                  <a className={classNames('nav-link', { active: pathname === '/posts' })}>Blog</a>
+                </Link>
               </li>
               <li>
-                <a className="nav-link" href="#portfolio" onClick={navigate}>
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a className="nav-link" href="#blog" onClick={navigate}>
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a className="nav-link" href="#contact" onClick={navigate}>
-                  Contact
-                </a>
+                <Link href="/contact">
+                  <a className={classNames('nav-link', { active: pathname === '/contact' })}>
+                    Contact
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>
